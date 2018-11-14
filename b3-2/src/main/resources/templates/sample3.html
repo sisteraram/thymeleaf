@@ -5,14 +5,30 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<h2>[[${#arrays.length(arr)}]]</h2>
+
+
 <h1 th:text="${list}"></h1>
-<ul th:each="member : ${list}">
+<ul th:each="member, iterState : ${list}" th:with="target='u02'">
 	<li>
-		<span th:text="${member.mid}"></span>
+		<span th:text="${iterState.index}"></span>
+		<span th:text="${iterState.count}"></span>
+		<span th:text="${member.mid == target ? 'SECRET' : member.mid}"></span>
 		<span th:text="${member.mname}"></span>
+		<span >[[${member.mname}]]</span>
 		<span th:text="${#dates.format(member.regdate, 'yyyy-MM-dd')}"></span>
 		
 	</li>
 </ul>
+
+<script th:inline="javascript">
+	var result = [[${result}]];
+	
+	if (result === 'SUCCESS') {
+		alert("AAA");
+	}
+</script>
+
 </body>
 </html>

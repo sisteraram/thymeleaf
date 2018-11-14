@@ -41,6 +41,8 @@ public class SampleController {
 		}
 
 		model.addAttribute("list", list);
+		model.addAttribute("result", "SUCCES");
+		model.addAttribute("arr", new String[] {"AAA", "BBB", "CCC", "DDD"});
 
 	}
 
