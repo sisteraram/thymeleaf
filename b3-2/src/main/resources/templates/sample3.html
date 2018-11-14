@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 th:text="${list}"></h1>
+<ul th:each="member : ${list}">
+	<li>
+		<span th:text="${member.mid}"></span>
+		<span th:text="${member.mname}"></span>
+		<span th:text="${#dates.format(member.regdate, 'yyyy-MM-dd')}"></span>
+		
+	</li>
+</ul>
+</body>
+</html>
